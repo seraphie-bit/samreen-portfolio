@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samreen Fayyaz | BS Mathematics Undergraduate</title>
+<meta name="description" content="Portfolio of Samreen Fayyaz, BS Mathematics undergraduate at BZU Multan. Canva designer and Python learner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+<style>
+/* ===== 1. EDIT COLOURS & FONTS HERE ===== */
+:root{
+  --navy:#0B1026; --violet:#7C3AED; --orange:#FF8A3D; --teal:#2DD4BF; --cream:#FFF7ED;
+  --font-display:"Syne",system-ui,sans-serif;
+  --font-body:"DM Sans",system-ui,sans-serif;
+  --grad:linear-gradient(120deg,var(--violet),var(--orange) 55%,var(--teal));
+  /* dark theme (default) */
+  --bg:var(--navy); --text:var(--cream); --muted:#b9bdd6;
+  --glass:rgba(255,255,255,.06); --border:rgba(255,247,237,.16);
+  --accent-text:var(--teal); --star:1; --shadow:0 12px 40px rgba(0,0,0,.35);
+}
+/* light theme: follows system, or the toggle button */
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:var(--cream);--text:var(--navy);--muted:#4a5070;--glass:rgba(255,255,255,.7);--border:rgba(11,16,38,.14);--accent-text:#0f766e;--star:.25;--shadow:0 12px 40px rgba(124,58,237,.15)}
+}
+:root[data-theme="light"]{--bg:var(--cream);--text:var(--navy);--muted:#4a5070;--glass:rgba(255,255,255,.7);--border:rgba(11,16,38,.14);--accent-text:#0f766e;--star:.25;--shadow:0 12px 40px rgba(124,58,237,.15)}
+
+/* ===== 2. BASE ===== */
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.65;font-size:1.05rem;transition:background .3s,color .3s;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font-display);line-height:1.1}
+p{max-width:65ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1100px,92%);margin-inline:auto}
+section{padding:clamp(4rem,9vw,7rem) 0}
+h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:.4rem}
+.sub{color:var(--muted);margin-bottom:2.5rem}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sr{position:absolute;left:-9999px}
+
+/* starfield (pure CSS) */
+.stars{position:fixed;inset:0;z-index:-1;opacity:var(--star);pointer-events:none;
+  background-image:
+   radial-gradient(1.5px 1.5px at 20px 30px,#fff,transparent),
+   radial-gradient(1px 1px at 90px 120px,#fff,transparent),
+   radial-gradient(2px 2px at 160px 60px,var(--teal),transparent),
+   radial-gradient(1px 1px at 230px 180px,#fff,transparent),
+   radial-gradient(1.5px 1.5px at 300px 90px,var(--orange),transparent);
+  background-size:330px 220px,270px 260px,410px 300px,230px 190px,350px 280px;
+  animation:twinkle 6s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:calc(var(--star)*.55)}to{opacity:var(--star)}}
+
+/* glass cards + buttons */
+.card{background:var(--glass);border:1px solid var(--border);border-radius:22px;padding:1.6rem;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .2s,box-shadow .2s;cursor:pointer;font:inherit;font-weight:700}
+.btn:hover{transform:translateY(-3px)}
+.btn-main{background:var(--orange);color:var(--navy);box-shadow:0 8px 24px rgba(255,138,61,.4)}
+.btn-line{border-color:var(--violet);color:var(--text)}
+.btn-line:hover{background:var(--violet);color:#fff}
+
+/* ===== 3. NAVBAR ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--font-display);font-weight:800;font-size:1.5rem;text-decoration:none}
+.links{display:flex;gap:1.4rem;list-style:none;padding:0;align-items:center}
+.links a{text-decoration:none;font-weight:500;font-size:.95rem;padding:.3rem 0;border-bottom:2px solid transparent}
+.links a:hover{border-color:var(--orange)}
+.icon-btn{background:none;border:1px solid var(--border);color:var(--text);width:42px;height:42px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+#burger{display:none}
+@media(max-width:860px){
+  #burger{display:grid}
+  .links{position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--bg);padding:1.2rem 0;gap:1rem;border-bottom:1px solid var(--border);display:none}
+  .links.open{display:flex}
+}
+
+/* ===== 4. HERO ===== */
+#home{min-height:100svh;display:flex;align-items:center;padding-top:110px}
+.hero{display:grid;gap:2rem;align-items:center}
+@media(min-width:860px){.hero{grid-template-columns:1.2fr 1fr}}
+.hero h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:800;letter-spacing:-.02em}
+.typing{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.8rem);color:var(--accent-text);min-height:2.2rem;margin:1rem 0}
+.typing::after{content:"|";margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.tagline{color:var(--muted);margin-bottom:1.8rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+/* the one big animation: orbiting planets */
+.orbit{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:auto}
+.core{position:absolute;inset:36%;border-radius:50%;background:var(--grad);display:grid;place-items:center;font:800 2.6rem var(--font-display);color:#fff;box-shadow:0 0 60px rgba(124,58,237,.7)}
+.ring{position:absolute;border:1px dashed var(--border);border-radius:50%;animation:spin var(--t) linear infinite}
+.ring i{position:absolute;top:-10px;left:50%;margin-left:-10px;width:20px;height:20px;border-radius:50%;background:var(--c);box-shadow:0 0 18px var(--c)}
+.r1{inset:22%;--t:9s;--c:var(--teal)} .r2{inset:8%;--t:16s;--c:var(--orange)} .r3{inset:-6%;--t:26s;--c:var(--violet)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sym{position:absolute;font:800 1.6rem var(--font-display);color:var(--accent-text);animation:float 5s ease-in-out infinite alternate}
+.s1{top:2%;left:8%}.s2{top:12%;right:2%;animation-delay:-1s}.s3{bottom:6%;left:2%;animation-delay:-2s}.s4{bottom:0;right:14%;animation-delay:-3s}.s5{top:46%;left:-6%;animation-delay:-4s}
+@keyframes float{to{transform:translateY(-16px) rotate(8deg)}}
+
+/* ===== 5. ABOUT ===== */
+.about{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:860px){.about{grid-template-columns:1fr 1.3fr}}
+.photo{width:min(320px,80%);aspect-ratio:1;margin:auto;border-radius:63% 37% 54% 46%/55% 48% 52% 45%;background:var(--grad);padding:6px;animation:morph 12s ease-in-out infinite alternate}
+.photo>div{width:100%;height:100%;border-radius:inherit;background:var(--bg);display:grid;place-items:center;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+@keyframes morph{to{border-radius:40% 60% 38% 62%/48% 58% 42% 52%}}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1.8rem}
+.fact{padding:1rem;text-align:center;font-weight:700;border-radius:18px}
+.fact span{display:block;font-size:1.6rem}
+
+/* ===== 6. SKILLS ===== */
+.skill-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card h3{font-size:1.4rem;margin-bottom:1.2rem}
+.bar{margin-bottom:1.1rem}
+.bar-top{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:.35rem;gap:1rem}
+.bar-top b{color:var(--accent-text);white-space:nowrap}
+.track{height:10px;border-radius:99px;background:var(--border);overflow:hidden}
+.track span{display:block;height:100%;width:0;background:var(--grad);border-radius:99px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.in .track span,.no-js .track span{width:var(--w)}
+.pills{display:flex;flex-wrap:wrap;gap:.6rem}
+.pills span{padding:.5rem 1rem;border-radius:99px;border:1px solid var(--violet);font-size:.95rem;background:var(--glass)}
+
+/* ===== 7. TIMELINE ===== */
+.timeline{position:relative;padding-left:2rem;max-width:720px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:3px;background:var(--grad);border-radius:3px}
+.t-item{position:relative;margin-bottom:1.6rem}
+.t-item::before{content:"";position:absolute;left:-2.2rem;top:1.7rem;width:17px;height:17px;border-radius:50%;background:var(--bg);border:4px solid var(--orange)}
+.t-item h3{font-size:1.25rem}
+.tag{display:inline-block;font-size:.85rem;padding:.15rem .8rem;border-radius:99px;background:var(--violet);color:#fff;margin-bottom:.5rem}
+.t-item p{color:var(--muted)}
+
+/* ===== 8. WORK ===== */
+.work-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.thumb{display:block;width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:0;padding:0;cursor:zoom-in;background:var(--navy);margin-bottom:1rem;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.thumb:hover img{transform:scale(1.06)}
+.thumb em{position:absolute;right:10px;bottom:10px;background:var(--orange);color:var(--navy);font-style:normal;font-weight:700;font-size:.8rem;padding:.2rem .7rem;border-radius:99px}
+.soon{display:grid;place-items:center;text-align:center;border-style:dashed;min-height:260px;color:var(--muted)}
+.soon span{font-size:2.6rem;color:var(--accent-text)}
+dialog{border:0;background:transparent;max-width:96vw;max-height:96vh;padding:0}
+dialog::backdrop{background:rgba(5,8,22,.88)}
+dialog img{max-width:92vw;max-height:88vh;border-radius:12px;display:block;margin:auto;cursor:zoom-out}
+dialog button{position:absolute;top:-4px;right:-4px;z-index:2}
+
+/* ===== 9. OPPORTUNITIES ===== */
+.open-card{text-align:center;padding:clamp(2rem,6vw,4rem);border:2px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,var(--grad) border-box;border-radius:28px}
+.open-card p{margin:1rem auto 1.6rem}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--teal);margin-right:.5rem;box-shadow:0 0 0 0 var(--teal);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 12px transparent}}
+
+/* ===== 10. CONTACT ===== */
+.contact{display:grid;gap:2rem}
+@media(min-width:860px){.contact{grid-template-columns:1.1fr 1fr}}
+form{display:grid;gap:1rem}
+label{font-weight:500;font-size:.95rem}
+input,textarea{width:100%;margin-top:.35rem;padding:.8rem 1rem;border-radius:14px;border:1px solid var(--border);background:var(--glass);color:var(--text);font:inherit}
+textarea{min-height:140px;resize:vertical}
+.cards{display:grid;gap:1rem;align-content:start}
+.c-card{display:flex;gap:1rem;align-items:center;text-decoration:none;padding:1.1rem 1.3rem;transition:transform .2s,border-color .2s;overflow-wrap:anywhere}
+.c-card:hover{transform:translateX(6px);border-color:var(--teal)}
+.c-card svg{flex:none;width:28px;height:28px;stroke:var(--accent-text);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.c-card small{display:block;color:var(--muted)}
+.refs{color:var(--muted);font-size:.95rem}
+footer{text-align:center;padding:2rem 0;color:var(--muted);border-top:1px solid var(--border);font-size:.95rem}
+
+/* ===== 11. MOTION ===== */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}
+  .track span{width:var(--w)}
+}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a href="#home" class="logo grad-text" aria-label="Samreen Fayyaz, home">SF</a>
+    <ul class="links" id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#work">Design Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button class="icon-btn" id="theme" aria-label="Switch dark or light mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></li>
+    </ul>
+    <button class="icon-btn" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="home">
+  <div class="wrap hero">
+    <div>
+      <p style="color:var(--accent-text);font-weight:700">Hello, I am</p>
+      <h1 class="grad-text">Samreen Fayyaz</h1> <!-- EDIT HERE: name -->
+      <p class="typing" aria-live="off"><span id="type"></span></p>
+      <p class="tagline">BS Mathematics undergraduate who turns numbers, code and Canva into clear, useful work.</p> <!-- EDIT HERE: tagline -->
+      <div class="btns">
+        <a class="btn btn-main" href="#work">View My Work</a>
+        <a class="btn btn-line" href="#contact">Contact Me</a>
+        <!-- EDIT HERE: keep the CV PDF in the same folder as index.html -->
+        <a class="btn btn-line" href="Samreen_Fayyaz_Professional_CV.pdf" download>Download CV</a>
+      </div>
+    </div>
+    <div class="orbit" aria-hidden="true">
+      <div class="core">π</div>
+      <div class="ring r1"><i></i></div><div class="ring r2"><i></i></div><div class="ring r3"><i></i></div>
+      <span class="sym s1">∑</span><span class="sym s2">∞</span><span class="sym s3">√</span><span class="sym s4">∫</span><span class="sym s5">π</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <div class="photo reveal"><div>
+      <!-- EDIT HERE: put your photo at images/profile.jpg, then remove the SVG below and uncomment the img -->
+      <!-- <img src="images/profile.jpg" alt="Portrait of Samreen Fayyaz"> -->
+      <svg width="55%" viewBox="0 0 100 100" fill="none" stroke="var(--teal)" stroke-width="3" role="img" aria-label="Profile photo placeholder"><circle cx="50" cy="36" r="16"/><path d="M18 88c4-22 18-30 32-30s28 8 32 30"/></svg>
+    </div></div>
+    <div class="reveal">
+      <h2>About me</h2>
+      <p class="sub">Analytical mind, creative hands.</p>
+      <!-- EDIT HERE: career objective -->
+      <p>Motivated and hardworking BS Mathematics undergraduate seeking an entry-level opportunity to apply analytical thinking, strengthen practical skills, and gain professional experience. Interested in mathematics, programming, and digital design, with a willingness to learn new tools and contribute positively to a team.</p>
+      <div class="facts">
+        <div class="card fact"><span>∑</span>BS Mathematics</div>
+        <div class="card fact"><span>🎓</span>BZU Multan</div>
+        <div class="card fact"><span>🗣</span>Urdu and English</div>
+        <div class="card fact"><span>⚡</span>Quick Learner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2 class="reveal">Skills</h2>
+    <p class="sub reveal">Honest levels, and still growing.</p>
+    <div class="skill-grid">
+      <div class="card reveal">
+        <h3>Design</h3>
+        <!-- EDIT HERE: bar width is set by --w; the label is your level -->
+        <div class="bar"><div class="bar-top"><span>Canva &amp; Digital Design</span><b>Practical</b></div><div class="track"><span style="--w:75%"></span></div></div>
+        <div class="bar"><div class="bar-top"><span>Photo Editing</span><b>Basic</b></div><div class="track"><span style="--w:50%"></span></div></div>
+      </div>
+      <div class="card reveal">
+        <h3>Tech</h3>
+        <div class="bar"><div class="bar-top"><span>Python</span><b>Beginner</b></div><div class="track"><span style="--w:30%"></span></div></div>
+        <div class="bar"><div class="bar-top"><span>MS Word</span><b>Beginner</b></div><div class="track"><span style="--w:35%"></span></div></div>
+        <div class="bar"><div class="bar-top"><span>Computer Skills</span><b>Basic</b></div><div class="track"><span style="--w:50%"></span></div></div>
+      </div>
+      <div class="card reveal">
+        <h3>Strengths</h3>
+        <div class="pills">
+          <span>Hardworking</span><span>Responsible</span><span>Quick learner</span><span>Problem-solving mindset</span><span>Eager to build new skills</span><span>Urdu</span><span>English</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <h2 class="reveal">Education</h2>
+    <p class="sub reveal">My path so far.</p>
+    <div class="timeline">
+      <div class="t-item card reveal">
+        <span class="tag">Currently studying</span>
+        <h3>BS Mathematics</h3>
+        <p>Bahauddin Zakariya University (BZU), Multan. Undergraduate.</p>
+        <!-- EDIT HERE: year / institute -->
+      </div>
+      <div class="t-item card reveal">
+        <span class="tag">Completed</span>
+        <h3>Intermediate</h3>
+        <p>Higher secondary education.</p>
+        <!-- EDIT HERE: year / institute -->
+      </div>
+      <div class="t-item card reveal">
+        <span class="tag">Completed</span>
+        <h3>Matriculation</h3>
+        <p>Secondary school education.</p>
+        <!-- EDIT HERE: year / institute -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN WORK -->
+<section id="work">
+  <div class="wrap">
+    <h2 class="reveal">Design work</h2>
+    <p class="sub reveal">Made in Canva. Click the poster to zoom.</p>
+    <div class="work-grid">
+      <article class="card reveal">
+        <!-- EDIT HERE: put your infographic file at images/john-young-infographic.jpg -->
+        <button class="thumb" id="open-lb" aria-label="Zoom into the John Young infographic">
+          <img src="images/john-young-infographic.jpg" alt="Educational infographic poster about astronaut John Young and the mathematics behind space missions" loading="lazy">
+          <em>Click to zoom</em>
+        </button>
+        <h3>John Young: A Pioneer in Space Exploration</h3>
+        <p style="color:var(--muted);margin-top:.5rem">Mathematics: The Key to Successful Missions. An educational infographic poster designed in Canva.</p>
+      </article>
+      <article class="card soon reveal"><div><span>+</span><h3>More projects coming soon</h3></div></article>
+    </div>
+  </div>
+</section>
+<dialog id="lb" aria-label="Infographic zoom view">
+  <button class="icon-btn" id="close-lb" aria-label="Close">✕</button>
+  <img src="images/john-young-infographic.jpg" alt="John Young infographic, full size">
+</dialog>
+
+<!-- OPEN TO OPPORTUNITIES -->
+<section id="opportunities" style="padding-top:0">
+  <div class="wrap">
+    <div class="open-card reveal">
+      <h2><span class="dot"></span>Open to opportunities</h2>
+      <p>I do not have formal work experience yet, but I am ready to learn and contribute. I am open to internships, part-time and entry-level work.</p>
+      <a class="btn btn-main" href="#contact">Let's talk</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Contact</h2>
+    <p class="sub reveal">Send a message, or reach me directly.</p>
+    <div class="contact">
+      <form class="card reveal" id="form">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Message<textarea name="msg" required></textarea></label>
+        <button class="btn btn-main" type="submit">Send message</button>
+        <p class="refs">Opens your email app with the message ready to send.</p>
+      </form>
+      <div class="cards reveal">
+        <!-- EDIT HERE: contact details -->
+        <a class="card c-card" href="tel:03249335633"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><small>Phone</small>0324 9335633</div></a>
+        <a class="card c-card" href="mailto:samreenfayyaz82@gmail.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><small>Email</small>samreenfayyaz82@gmail.com</div></a>
+        <a class="card c-card" href="https://www.google.com/maps/search/?api=1&amp;query=Chungi+No.+5+Nawab+Pur+Road+Multan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><small>Address</small>Chungi No. 5, Nawab Pur Road, Multan</div></a>
+        <a class="card c-card" href="https://www.linkedin.com/in/samreen-fiaz-524ba53b6/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6m0 3c0-2 4-3 4 0v3"/></svg><div><small>LinkedIn</small>Samreen Fayyaz</div></a>
+        <p class="refs">References available upon request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="yr">2026</span> Samreen Fayyaz. All rights reserved.</footer>
+
+<script>
+/* ===== JS: theme, menu, typing, reveal, lightbox, form ===== */
+const root=document.documentElement; root.classList.add('js');
+const $=s=>document.querySelector(s);
+
+/* Theme: system preference by default, remembered after toggle */
+try{const t=localStorage.getItem('theme'); if(t) root.dataset.theme=t;}catch(e){}
+const isLight=()=>root.dataset.theme?root.dataset.theme==='light':matchMedia('(prefers-color-scheme: light)').matches;
+$('#theme').onclick=()=>{const n=isLight()?'dark':'light'; root.dataset.theme=n; try{localStorage.setItem('theme',n)}catch(e){}};
+
+/* Mobile menu */
+const burger=$('#burger'), menu=$('#menu');
+burger.onclick=()=>{const o=menu.classList.toggle('open'); burger.setAttribute('aria-expanded',o);};
+menu.addEventListener('click',e=>{if(e.target.closest('a')){menu.classList.remove('open');burger.setAttribute('aria-expanded',false);}});
+
+/* Typing effect */
+const words=["Mathematics Student","Canva Designer","Python Learner","Quick Learner"]; // EDIT HERE
+const el=$('#type'); let w=0,c=0,del=false;
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=words.join(' | ');}
+else (function tick(){
+  const word=words[w]; c+=del?-1:1; el.textContent=word.slice(0,c);
+  let d=del?45:90;
+  if(!del&&c===word.length){del=true;d=1400}
+  else if(del&&c===0){del=false;w=(w+1)%words.length;d=350}
+  setTimeout(tick,d);
+})();
+
+/* Scroll reveal (also fills skill bars) */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+
+/* Lightbox */
+const lb=$('#lb');
+$('#open-lb').onclick=()=>lb.showModal();
+$('#close-lb').onclick=()=>lb.close();
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.tagName==='IMG')lb.close()});
+
+/* Contact form -> mailto */
+$('#form').addEventListener('submit',e=>{
+  e.preventDefault(); const f=new FormData(e.target);
+  const body=`${f.get('msg')}\n\nFrom: ${f.get('name')} (${f.get('email')})`;
+  location.href=`mailto:samreenfayyaz82@gmail.com?subject=${encodeURIComponent('Portfolio message from '+f.get('name'))}&body=${encodeURIComponent(body)}`;
+});
+$('#yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
